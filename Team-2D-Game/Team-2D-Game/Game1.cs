@@ -85,6 +85,7 @@ namespace Team_2D_Game
             GraphicsDevice.Clear(Color.AntiqueWhite);
 
             // TODO: Add your drawing code here
+            // TODO: Remove this useless comment
 
             base.Draw(gameTime);
         }
