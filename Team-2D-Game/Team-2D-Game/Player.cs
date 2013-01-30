@@ -46,7 +46,7 @@ namespace Team_2D_Game
         public void playerLoadContent()
         {
             //TODO: load all player specific content, he will need body animation, four hat
-            // and four staves.
+            // and four staves. sounds too
         }
 
         public void playerUpdate(GameTime gameTime)
@@ -73,6 +73,11 @@ namespace Team_2D_Game
             this.health = this.health + healthGained;
             if (this.health > MAX_HEALTH)
                 this.health = MAX_HEALTH;
+        }
+
+        public void pickup(Inventory.power pickup, int amountPickedUp)
+        {
+            this.playerInventory.InventoryPickup(pickup, amountPickedUp);
         }
     }
 }

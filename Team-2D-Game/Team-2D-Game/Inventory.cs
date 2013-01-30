@@ -61,6 +61,10 @@ namespace Team_2D_Game
         public void setCurrentMaxPower(int newMax)
         {
             currentMaxPower = newMax;
+            loc1.setMaxPower(newMax);
+            loc2.setMaxPower(newMax);
+            loc3.setMaxPower(newMax);
+            loc4.setMaxPower(newMax);
         }
     }
 
