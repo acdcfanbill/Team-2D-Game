@@ -21,6 +21,7 @@ namespace Team_2D_Game
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Vector2 startPosition;
+        Vector2 gravity;
         Player player1;
 
         public Game1()
@@ -29,6 +30,8 @@ namespace Team_2D_Game
             Content.RootDirectory = "Content";
             startPosition.X = 200;
             startPosition.Y = 300;
+            gravity.X = 0;
+            gravity.Y = 800; //wild ass guess to gravity in Y direction
         }
 
         /// <summary>

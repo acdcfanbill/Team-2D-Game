@@ -15,7 +15,10 @@ namespace Team_2D_Game
     class Player : Microsoft.Xna.Framework.Game
     {
         //Useable stuff
-        public enum playerState { run, jump, left, right };
+        public struct playerState 
+        {
+            public bool run = false, jump = false, left = false, right = false;
+        }
 
         //All variables for the player
         public static int MAX_HEALTH = 100;
@@ -27,6 +30,8 @@ namespace Team_2D_Game
         Vector2 hatOrigin;
         Vector2 staffOrigin;
         InventoryLocation selectedLoc;
+        bool inJump;
+        playerState state;
 
         //need a constructor
         public Player(Vector2 startPosition)
@@ -44,6 +49,7 @@ namespace Team_2D_Game
             this.fxEmitPosition.Y = 10;
             this.playerInventory = new Inventory();
             selectedLoc = playerInventory.loc1;
+            inJump = false;
         }
 
         public void playerLoadContent()
@@ -56,6 +62,12 @@ namespace Team_2D_Game
         {
             //TODO: write all the update stuff.  Plan to split it off into other methods.
             // check keyboard state, do updates based on pressed keys
+
+            if (!inJump && state.jump)
+            {
+
+            }
+
         }
 
         public void playerDraw(GameTime gameTime)
@@ -81,6 +93,11 @@ namespace Team_2D_Game
         public void pickup(Game1.power pickup, int amountPickedUp)
         {
             this.playerInventory.InventoryPickup(pickup, amountPickedUp);
+        }
+
+        public void updateState()
+        {
+
         }
     }
 }
