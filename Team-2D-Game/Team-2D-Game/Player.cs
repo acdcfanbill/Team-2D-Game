@@ -17,7 +17,7 @@ namespace Team_2D_Game
         //Useable stuff
         public struct playerState 
         {
-            public bool run = false, jump = false, left = false, right = false;
+            public bool run, jump, left, right;
         }
 
         //All variables for the player
@@ -50,6 +50,10 @@ namespace Team_2D_Game
             this.playerInventory = new Inventory();
             selectedLoc = playerInventory.loc1;
             inJump = false;
+            state.run = false;
+            state.jump = false;
+            state.left = false;
+            state.right = false;
         }
 
         public void playerLoadContent()
