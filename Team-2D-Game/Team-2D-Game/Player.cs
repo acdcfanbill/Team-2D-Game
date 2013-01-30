@@ -14,6 +14,9 @@ namespace Team_2D_Game
 {
     class Player : Microsoft.Xna.Framework.Game
     {
+        //Useable stuff
+        public enum playerState { run, jump, left, right };
+
         //All variables for the player
         public static int MAX_HEALTH = 100;
         int health; //start with 100 health
@@ -75,7 +78,7 @@ namespace Team_2D_Game
                 this.health = MAX_HEALTH;
         }
 
-        public void pickup(Inventory.power pickup, int amountPickedUp)
+        public void pickup(Game1.power pickup, int amountPickedUp)
         {
             this.playerInventory.InventoryPickup(pickup, amountPickedUp);
         }

@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Team_2D_Game
 {
-    public class Inventory
+    public class Inventory : Microsoft.Xna.Framework.Game
     {
-        public enum power { fire, ice, wind, shock };
+        //public enum power { fire, ice, wind, shock };
         public static int MAX_POWER = 10;
         public static int currentMaxPower = 5;
 
@@ -20,10 +20,10 @@ namespace Team_2D_Game
         //right now, constructor makes all four locations with max 5
         public Inventory()
         {
-            loc1 = new InventoryLocation(power.fire, currentMaxPower);
-            loc2 = new InventoryLocation(power.ice, currentMaxPower);
-            loc3 = new InventoryLocation(power.wind, currentMaxPower);
-            loc4 = new InventoryLocation(power.shock, currentMaxPower);
+            loc1 = new InventoryLocation(Game1.power.fire, currentMaxPower);
+            loc2 = new InventoryLocation(Game1.power.ice, currentMaxPower);
+            loc3 = new InventoryLocation(Game1.power.wind, currentMaxPower);
+            loc4 = new InventoryLocation(Game1.power.shock, currentMaxPower);
 
             //give you 5 shots for each power
             loc1.addCharge(5);
@@ -33,20 +33,20 @@ namespace Team_2D_Game
         }
 
         //pickup something, figure out what it is, and add it to our inventory.
-        public void InventoryPickup(Inventory.power pickup, int amountPickedUp)
+        public void InventoryPickup(Game1.power pickup, int amountPickedUp)
         {
             switch (pickup)
             {
-                case power.fire:
+                case Game1.power.fire:
                     loc1.addCharge(amountPickedUp);
                     break;
-                case power.ice:
+                case Game1.power.ice:
                     loc2.addCharge(amountPickedUp);
                     break;
-                case power.wind:
+                case Game1.power.wind:
                     loc3.addCharge(amountPickedUp);
                     break;
-                case power.shock:
+                case Game1.power.shock:
                     loc4.addCharge(amountPickedUp);
                     break;
                 }
@@ -73,14 +73,14 @@ namespace Team_2D_Game
      */
     public class InventoryLocation
     {
-        private Inventory.power locationPower;
+        private Game1.power locationPower;
         private int charge;
         private int maxPower;
 
         /**
          * Default constructor
          */
-        public InventoryLocation(Inventory.power locationPower, int maxPower)
+        public InventoryLocation(Game1.power locationPower, int maxPower)
         {
             this.locationPower = locationPower;
             this.charge = 0;
@@ -120,7 +120,7 @@ namespace Team_2D_Game
         /**
          * get the power
          */
-        public Inventory.power getPower()
+        public Game1.power getPower()
         {
             return this.locationPower;
         }
