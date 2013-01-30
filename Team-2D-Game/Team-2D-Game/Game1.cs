@@ -17,13 +17,18 @@ namespace Team_2D_Game
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
+        public enum power { fire, ice, wind, shock };
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        Vector2 startPosition;
+        Player player1;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            startPosition.X = 200;
+            startPosition.Y = 300;
         }
 
         /// <summary>
@@ -37,6 +42,7 @@ namespace Team_2D_Game
             // TODO: Add your initialization logic here
 
             base.Initialize();
+            player1 = new Player(startPosition);
         }
 
         /// <summary>
@@ -48,6 +54,7 @@ namespace Team_2D_Game
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            player1.playerLoadContent();
             // TODO: use this.Content to load your game content here
         }
 
@@ -72,6 +79,7 @@ namespace Team_2D_Game
                 this.Exit();
 
             // TODO: Add your update logic here
+            player1.playerUpdate(gameTime);
 
             base.Update(gameTime);
         }
@@ -83,6 +91,8 @@ namespace Team_2D_Game
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.AntiqueWhite);
+
+            player1.playerDraw(gameTime);
 
             // TODO: Add your drawing code here
             // TODO: Remove this useless comment
