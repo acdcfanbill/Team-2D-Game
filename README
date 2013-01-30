@@ -1,1 +1,4 @@
-This is a directory of a Visual Studio 2010 Express package.  It's been created with XNA4.  Pull and you'll have the simplest game there is, drawing a Whiteish screen.
+This is a directory of a Visual Studio 2010 package.  It's been created with XNA4.  Pull and you'll have the simplest game there is, drawing a Whiteish screen.
+
+
+It's getting more complicated.  Some classes for the player and inventory are now in place.  player unfinished, no garrantees.
