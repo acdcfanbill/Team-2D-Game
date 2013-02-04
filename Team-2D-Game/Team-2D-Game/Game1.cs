@@ -19,6 +19,9 @@ namespace Team_2D_Game
     {
         public enum power { fire, ice, wind, shock };
         GraphicsDeviceManager graphics;
+        public GamePadState gamePadState;
+        public KeyboardState keyboardState;
+        public MouseState mouseState;
         SpriteBatch spriteBatch;
         Vector2 startPosition;
         Vector2 gravity;
@@ -77,6 +80,11 @@ namespace Team_2D_Game
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            // Update the state of the keyboard or gamepad
+            gamePadState = GamePad.GetState(PlayerIndex.One);
+            keyboardState = Keyboard.GetState();
+            mouseState = Mouse.GetState();
+
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();

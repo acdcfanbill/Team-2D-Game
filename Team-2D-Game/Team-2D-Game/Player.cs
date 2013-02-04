@@ -66,6 +66,7 @@ namespace Team_2D_Game
         {
             //TODO: write all the update stuff.  Plan to split it off into other methods.
             // check keyboard state, do updates based on pressed keys
+            updateState();
 
             if (!inJump && state.jump)
             {
@@ -101,7 +102,7 @@ namespace Team_2D_Game
 
         public void updateState()
         {
-
+            if(Game1.
         }
     }
 }
